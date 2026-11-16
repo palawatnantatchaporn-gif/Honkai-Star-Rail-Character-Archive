@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Honkai Star Rail | Character Archive</title>
 
 <style>
@@ -12,68 +11,68 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #10182d, #263653, #495a78);
-    color: #f2f5fc;
+    background: linear-gradient(135deg,#111b32,#273957,#657895);
+    color: #f3f6fc;
     min-height: 100vh;
 }
 
-/* HEADER */
 header {
     text-align: center;
-    padding: 65px 20px 45px;
-    background: linear-gradient(135deg, #253957, #64799b);
-    border-bottom: 1px solid #aebbd2;
+    padding: 75px 20px 60px;
+    background:
+        linear-gradient(135deg,#1d2c49dd,#7186a7dd);
 }
 
-header .subtitle {
+.subtitle {
     letter-spacing: 5px;
+    color: #d2deef;
     font-size: 12px;
-    color: #d5dfef;
     margin-bottom: 18px;
 }
 
 header h1 {
-    font-size: clamp(30px, 6vw, 55px);
-    letter-spacing: 2px;
+    font-size: clamp(30px,6vw,58px);
+    letter-spacing: 3px;
     margin-bottom: 15px;
 }
 
 header p {
-    color: #e0e7f3;
-    line-height: 1.8;
+    color: #e0e8f5;
+    line-height: 1.9;
 }
 
-/* NAVIGATION */
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 18px;
-    background: #18243a;
     position: sticky;
     top: 0;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 18px;
+    background: #17243aee;
+    backdrop-filter: blur(10px);
 }
 
 nav a {
-    color: #dce5f4;
     text-decoration: none;
+    color: #e1e9f6;
     font-size: 14px;
+    transition: .3s;
 }
 
 nav a:hover {
-    color: #b9cbed;
+    color: #a9c8f1;
 }
 
-/* MAIN */
 .container {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
-    padding: 45px 20px;
+    padding: 50px 22px;
 }
 
 .section-title {
@@ -83,189 +82,200 @@ nav a:hover {
 
 .section-title h2 {
     font-size: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .section-title p {
-    color: #c1cde0;
+    color: #bdcce1;
     font-size: 14px;
 }
 
-/* FILTER BUTTONS */
+/* FILTER */
+
 .filters {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 35px;
+    margin-bottom: 38px;
 }
 
 .filter-btn {
-    padding: 11px 23px;
-    border: 1px solid #a6b8d6;
+    border: 1px solid #879dbd;
+    background: #263955;
+    color: #e9eff9;
+    padding: 12px 22px;
     border-radius: 30px;
-    background: transparent;
-    color: #e5ebf6;
     cursor: pointer;
-    transition: 0.3s;
-    font-size: 14px;
+    transition: .3s;
 }
 
 .filter-btn:hover {
-    background: #667fa5;
+    background: #7088ad;
     transform: translateY(-3px);
 }
 
 .filter-btn.active {
-    background: #a9bddb;
-    color: #17243a;
-    border-color: #a9bddb;
+    background: #c1d3eb;
+    color: #1b2b45;
+    border-color: #c1d3eb;
     font-weight: bold;
 }
 
-/* CHARACTER GRID */
+/* GALLERY */
+
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
 }
 
-/* CHARACTER CARD */
 .character-card {
-    background: #202e47;
-    border: 1px solid #536785;
+    background: #202f49;
+    border: 1px solid #536986;
     border-radius: 20px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: .35s;
 }
 
 .character-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px #080f1c88;
-    border-color: #b7c9e4;
+    box-shadow: 0 15px 35px #080f1c88;
+    border-color: #c2d4ef;
 }
 
-/* CARD ART */
-.character-art {
-    height: 190px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #7185a9, #263653);
-}
-
-.character-art::before {
-    content: "✦";
-    position: absolute;
-    font-size: 130px;
-    color: #ffffff22;
-    transform: rotate(15deg);
-}
-
-.character-art span {
-    font-size: 55px;
-    z-index: 1;
-    text-shadow: 0 5px 15px #10182d88;
-}
-
-.character-art.purple {
-    background: linear-gradient(135deg, #725d91, #302b50);
-}
-
-.character-art.blue {
-    background: linear-gradient(135deg, #608eae, #243d62);
-}
-
-.character-art.gold {
-    background: linear-gradient(135deg, #b49a6b, #544b45);
-}
-
-/* CARD TEXT */
-.card-info {
-    padding: 20px;
-}
-
-.card-info h3 {
-    font-size: 20px;
-    margin-bottom: 9px;
-}
-
-.card-info p {
-    color: #c2cee0;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.tag {
-    display: inline-block;
-    margin-top: 13px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background: #526888;
-    color: #edf3fc;
-    font-size: 11px;
-}
-
-/* HIDE FILTERED CARDS */
 .character-card.hide {
     display: none;
 }
 
-/* ABOUT GAME */
+/* IMAGE */
+
+.character-art {
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg,#667fa5,#283956);
+}
+
+.character-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    transition: .5s;
+}
+
+.character-card:hover .character-art img {
+    transform: scale(1.07);
+}
+
+/* IMAGE FALLBACK */
+
+.image-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    color: #e9eff9;
+    background: linear-gradient(135deg,#7187aa,#293956);
+}
+
+.image-fallback span {
+    font-size: 65px;
+}
+
+.image-fallback small {
+    font-size: 12px;
+}
+
+/* CARD INFO */
+
+.card-info {
+    padding: 22px;
+}
+
+.card-info h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    font-size: 13px;
+    color: #c3d0e3;
+    line-height: 1.9;
+}
+
+.tag {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: #526b91;
+    color: #f1f5fc;
+    font-size: 11px;
+}
+
+/* ABOUT */
+
 .about-game {
-    margin-top: 60px;
-    padding: 35px;
-    background: #202e47;
-    border: 1px solid #536785;
-    border-radius: 22px;
+    margin-top: 65px;
     text-align: center;
+    background: #202f49;
+    border: 1px solid #536986;
+    border-radius: 25px;
+    padding: 40px 25px;
 }
 
 .about-game h2 {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .about-game p {
-    color: #c2cee0;
+    color: #c4d0e2;
     line-height: 2;
     font-size: 14px;
 }
 
 /* FOOTER */
+
 footer {
     text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    background: #111b2d;
+    background: #101a2d;
+    padding: 28px 15px;
+    margin-top: 50px;
     color: #bdcbe0;
     font-size: 13px;
+    line-height: 2;
 }
 
 /* RESPONSIVE */
-@media (max-width: 750px) {
+
+@media(max-width:800px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media (max-width: 500px) {
+@media(max-width:520px) {
     .gallery {
         grid-template-columns: 1fr;
     }
 
     nav {
-        gap: 15px;
+        gap: 18px;
         flex-wrap: wrap;
     }
 
     .character-art {
-        height: 210px;
+        height: 390px;
     }
 
-    .about-game {
-        padding: 25px 18px;
+    .container {
+        padding: 35px 16px;
     }
 }
 </style>
@@ -273,20 +283,16 @@ footer {
 
 <body>
 
-<!-- HEADER -->
 <header id="home">
     <div class="subtitle">WELCOME TO THE GALAXY</div>
-
     <h1>HONKAI: STAR RAIL</h1>
-
     <p>
         CHARACTER ARCHIVE
         <br>
-        สำรวจโลกแห่งดวงดาวและตัวละครที่น่าสนใจ
+        สำรวจตัวละครและเรื่องราวแห่งจักรวาลดวงดาว
     </p>
 </header>
 
-<!-- NAVIGATION -->
 <nav>
     <a href="#home">Home</a>
     <a href="#characters">Characters</a>
@@ -295,248 +301,198 @@ footer {
 
 <main class="container">
 
-    <!-- CHARACTER SECTION -->
-    <section id="characters">
+<section id="characters">
 
-        <div class="section-title">
-            <h2>✦ Character Gallery</h2>
-            <p>เลือกหมวดหมู่เพื่อค้นหาตัวละครที่คุณชื่นชอบ</p>
-        </div>
+    <div class="section-title">
+        <h2>✦ Character Gallery</h2>
+        <p>Discover your favorite characters</p>
+    </div>
 
-        <!-- FILTER BUTTONS -->
-        <div class="filters">
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+        <button class="filter-btn" data-filter="express">Astral Express</button>
+        <button class="filter-btn" data-filter="hunters">Stellaron Hunters</button>
+        <button class="filter-btn" data-filter="xianzhou">Xianzhou</button>
+    </div>
 
-            <button class="filter-btn active"
-                data-filter="all">ทั้งหมด</button>
+    <div class="gallery">
 
-            <button class="filter-btn"
-                data-filter="express">Astral Express</button>
-
-            <button class="filter-btn"
-                data-filter="hunters">Stellaron Hunters</button>
-
-            <button class="filter-btn"
-                data-filter="xianzhou">Xianzhou</button>
-
-        </div>
-
-        <!-- CHARACTER CARDS -->
-        <div class="gallery">
-
-            <!-- ASTRAL EXPRESS -->
-            <article class="character-card"
-                data-category="express">
-
-                <div class="character-art blue">
-                    <span>✧</span>
+        <!-- MARCH 7TH -->
+        <article class="character-card" data-category="express">
+            <div class="character-art">
+                <img src="images/march7.jpg" alt="March 7th"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" style="display:none">
+                    <span>✦</span><small>March 7th - ใส่รูปใน images</small>
                 </div>
+            </div>
+            <div class="card-info">
+                <h3>March 7th</h3>
+                <p>สาวน้อยผู้ร่าเริงที่ชื่นชอบการถ่ายภาพ และออกเดินทางไปค้นหาความจริงเกี่ยวกับอดีตของตัวเอง</p>
+                <span class="tag">Astral Express</span>
+            </div>
+        </article>
 
-                <div class="card-info">
-                    <h3>March 7th</h3>
-                    <p>
-                        สมาชิกขบวนรถไฟ Astral Express
-                        ผู้ร่าเริงและชื่นชอบการถ่ายภาพ
-                    </p>
-                    <span class="tag">Astral Express</span>
+        <!-- DAN HENG -->
+        <article class="character-card" data-category="express">
+            <div class="character-art">
+                <img src="images/danheng.jpg" alt="Dan Heng"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" style="display:none">
+                    <span>✦</span><small>Dan Heng - ใส่รูปใน images</small>
                 </div>
+            </div>
+            <div class="card-info">
+                <h3>Dan Heng</h3>
+                <p>สมาชิกผู้สุขุมของขบวนรถไฟ Astral Express ผู้รับหน้าที่ดูแลข้อมูลการเดินทาง</p>
+                <span class="tag">Astral Express</span>
+            </div>
+        </article>
 
-            </article>
-
-            <article class="character-card"
-                data-category="express">
-
-                <div class="character-art">
-                    <span>✦</span>
+        <!-- HIMEKO -->
+        <article class="character-card" data-category="express">
+            <div class="character-art">
+                <img src="images/himeko.jpg" alt="Himeko"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" style="display:none">
+                    <span>✦</span><small>Himeko - ใส่รูปใน images</small>
                 </div>
+            </div>
+            <div class="card-info">
+                <h3>Himeko</h3>
+                <p>นักสำรวจผู้มากประสบการณ์และเป็นหนึ่งในสมาชิกคนสำคัญของขบวนรถไฟ</p>
+                <span class="tag">Astral Express</span>
+            </div>
+        </article>
 
-                <div class="card-info">
-                    <h3>Dan Heng</h3>
-                    <p>
-                        ผู้ดูแลข้อมูลของขบวนรถไฟ
-                        มีบุคลิกเงียบขรึมและสุขุม
-                    </p>
-                    <span class="tag">Astral Express</span>
+        <!-- WELT -->
+        <article class="character-card" data-category="express">
+            <div class="character-art">
+                <img src="images/welt.jpg" alt="Welt"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" style="display:none">
+                    <span>✦</span><small>Welt - ใส่รูปใน images</small>
                 </div>
+            </div>
+            <div class="card-info">
+                <h3>Welt</h3>
+                <p>ชายผู้สุขุมและมีความรู้มากมาย เป็นสมาชิกที่มีประสบการณ์ของ Astral Express</p>
+                <span class="tag">Astral Express</span>
+            </div>
+        </article>
 
-            </article>
-
-            <article class="character-card"
-                data-category="express">
-
-                <div class="character-art gold">
-                    <span>✧</span>
+        <!-- KAFKA -->
+        <article class="character-card" data-category="hunters">
+            <div class="character-art">
+                <img src="images/kafka.jpg" alt="Kafka"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" style="display:none">
+                    <span>✦</span><small>Kafka - ใส่รูปใน images</small>
                 </div>
+            </div>
+            <div class="card-info">
+                <h3>Kafka</h3>
+                <p>สมาชิก Stellaron Hunters ผู้มีบุคลิกสง่างาม ลึกลับ และเยือกเย็น</p>
+                <span class="tag">Stellaron Hunters</span>
+            </div>
+        </article>
 
-                <div class="card-info">
-                    <h3>Himeko</h3>
-                    <p>
-                        นักเดินทางผู้เป็นสมาชิกสำคัญ
-                        ของขบวนรถไฟ Astral Express
-                    </p>
-                    <span class="tag">Astral Express</span>
+        <!-- SILVER WOLF -->
+        <article class="character-card" data-category="hunters">
+            <div class="character-art">
+                <img src="images/silverwolf.jpg" alt="Silver Wolf"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" style="display:none">
+                    <span>✦</span><small>Silver Wolf - ใส่รูปใน images</small>
                 </div>
+            </div>
+            <div class="card-info">
+                <h3>Silver Wolf</h3>
+                <p>แฮกเกอร์อัจฉริยะที่มองจักรวาลเป็นเกมขนาดใหญ่และชอบความท้าทาย</p>
+                <span class="tag">Stellaron Hunters</span>
+            </div>
+        </article>
 
-            </article>
-
-            <article class="character-card"
-                data-category="express">
-
-                <div class="character-art purple">
-                    <span>✦</span>
+        <!-- JING YUAN -->
+        <article class="character-card" data-category="xianzhou">
+            <div class="character-art">
+                <img src="images/jingyuan.jpg" alt="Jing Yuan"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" style="display:none">
+                    <span>✦</span><small>Jing Yuan - ใส่รูปใน images</small>
                 </div>
+            </div>
+            <div class="card-info">
+                <h3>Jing Yuan</h3>
+                <p>แม่ทัพแห่ง Xianzhou Luofu ผู้สุขุมและมีความสามารถในการวางแผน</p>
+                <span class="tag">Xianzhou</span>
+            </div>
+        </article>
 
-                <div class="card-info">
-                    <h3>Welt</h3>
-                    <p>
-                        ผู้มีประสบการณ์และความรู้มากมาย
-                        เป็นหนึ่งในสมาชิกขบวนรถไฟ
-                    </p>
-                    <span class="tag">Astral Express</span>
+        <!-- FU XUAN -->
+        <article class="character-card" data-category="xianzhou">
+            <div class="character-art">
+                <img src="images/fuxuan.jpg" alt="Fu Xuan"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="image-fallback" style="display:none">
+                    <span>✦</span><small>Fu Xuan - ใส่รูปใน images</small>
                 </div>
+            </div>
+            <div class="card-info">
+                <h3>Fu Xuan</h3>
+                <p>ผู้ดูแล Divination Commission แห่ง Xianzhou Luofu ผู้มีความสามารถในการทำนาย</p>
+                <span class="tag">Xianzhou</span>
+            </div>
+        </article>
 
-            </article>
+    </div>
+</section>
 
-            <!-- STELLARON HUNTERS -->
-            <article class="character-card"
-                data-category="hunters">
-
-                <div class="character-art purple">
-                    <span>✧</span>
-                </div>
-
-                <div class="card-info">
-                    <h3>Kafka</h3>
-                    <p>
-                        สมาชิก Stellaron Hunters
-                        ผู้มีบุคลิกสง่างามและลึกลับ
-                    </p>
-                    <span class="tag">Stellaron Hunters</span>
-                </div>
-
-            </article>
-
-            <article class="character-card"
-                data-category="hunters">
-
-                <div class="character-art blue">
-                    <span>✦</span>
-                </div>
-
-                <div class="card-info">
-                    <h3>Silver Wolf</h3>
-                    <p>
-                        แฮกเกอร์ฝีมือเยี่ยม
-                        ผู้มองจักรวาลเป็นเกมขนาดใหญ่
-                    </p>
-                    <span class="tag">Stellaron Hunters</span>
-                </div>
-
-            </article>
-
-            <!-- XIANZHOU -->
-            <article class="character-card"
-                data-category="xianzhou">
-
-                <div class="character-art gold">
-                    <span>✧</span>
-                </div>
-
-                <div class="card-info">
-                    <h3>Jing Yuan</h3>
-                    <p>
-                        แม่ทัพแห่ง Xianzhou Luofu
-                        ผู้สุขุมและมีความสามารถในการวางแผน
-                    </p>
-                    <span class="tag">Xianzhou</span>
-                </div>
-
-            </article>
-
-            <article class="character-card"
-                data-category="xianzhou">
-
-                <div class="character-art purple">
-                    <span>✦</span>
-                </div>
-
-                <div class="card-info">
-                    <h3>Fu Xuan</h3>
-                    <p>
-                        ผู้ดูแล Divination Commission
-                        แห่ง Xianzhou Luofu
-                    </p>
-                    <span class="tag">Xianzhou</span>
-                </div>
-
-            </article>
-
-        </div>
-    </section>
-
-    <!-- ABOUT GAME -->
-    <section class="about-game" id="about">
-
-        <h2>✦ About Honkai: Star Rail</h2>
-
-        <p>
-            Honkai: Star Rail เป็นเกมแนว RPG
-            ที่พาผู้เล่นออกเดินทางไปยังดวงดาวต่าง ๆ
-            ผ่านขบวนรถไฟ Astral Express
-            <br>
-            พบกับตัวละคร เรื่องราว และการผจญภัย
-            ในจักรวาลอันกว้างใหญ่
-        </p>
-
-    </section>
+<section class="about-game" id="about">
+    <h2>✦ About Honkai: Star Rail</h2>
+    <p>
+        Honkai: Star Rail เป็นเกมแนว RPG จาก HoYoverse
+        <br>
+        ผู้เล่นจะออกเดินทางไปยังดวงดาวต่าง ๆ ด้วยขบวนรถไฟ Astral Express
+        <br>
+        พบกับตัวละครหลากหลาย เรื่องราว และการผจญภัยในจักรวาลอันกว้างใหญ่
+    </p>
+</section>
 
 </main>
 
-<!-- FOOTER -->
 <footer>
     © 2026 Honkai: Star Rail Character Archive
     <br>
     Fan-made website for educational purposes
 </footer>
 
-<!-- JAVASCRIPT FILTER -->
 <script>
-
 const filterButtons = document.querySelectorAll(".filter-btn");
-const characterCards = document.querySelectorAll(".character-card");
+const cards = document.querySelectorAll(".character-card");
 
 filterButtons.forEach(button => {
-
     button.addEventListener("click", () => {
 
-        const selectedCategory = button.dataset.filter;
+        const selected = button.dataset.filter;
 
-        // เปลี่ยนปุ่มที่กำลังเลือก
         filterButtons.forEach(btn => {
             btn.classList.remove("active");
         });
 
         button.classList.add("active");
 
-        // กรองตัวละคร
-        characterCards.forEach(card => {
-
+        cards.forEach(card => {
             const category = card.dataset.category;
 
-            if (
-                selectedCategory === "all" ||
-                category === selectedCategory
-            ) {
+            if (selected === "all" || selected === category) {
                 card.classList.remove("hide");
             } else {
                 card.classList.add("hide");
             }
-
         });
-
     });
-
 });
-
 </script>
 
 </body>
